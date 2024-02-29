@@ -35,7 +35,7 @@ def api_func(prompt:str):
     if MODEL_NAME.startswith('CodeLlama'):
         openai.api_base = 'http://0.0.0.0:8000/v1'
     response = openai.ChatCompletion.create(
-        engine=MODEL_NAME,
+        model=MODEL_NAME,
         messages=[{"role": "user", "content": prompt}],
         temperature=0.1
     )
